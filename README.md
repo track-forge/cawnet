@@ -30,6 +30,20 @@ and a small ad-hoc crew network:
 
 The button is the heart of it. Everything else is optional.
 
+An optional WAN-connected tier could extend that local experience beyond the
+nearby crew. When a user deliberately enables it, selected friends in other
+crews could see a time-bounded presence or location and rendezvous on the hill.
+Trusted crews might also privately share which areas or lines they have already
+skied so friends can aim for another stash. This tier must remain optional,
+audience-scoped, revocable, and ephemeral; core CAWs continue to work without a
+phone, account, Internet connection, or cloud service.
+
+Each person could also choose a recognizable personal CAW: a raven, eagle,
+wood-thrush, guitar lick, or another short sound. One efficient possibility is
+to send a compact authenticated identity/event over the low-power network and
+play the recipient's cached sound locally, with optional WAN provisioning for
+sound packs. That is a concept to test, not an implementation decision.
+
 ## Project status
 
 CAWNET is in the **idea and creative phase**. This repository is for product
@@ -47,9 +61,12 @@ decisions.
 - **Tiny where it matters.** The pole-top unit should feel like part of the pole,
   not a gadget dangling from it.
 - **Joy, not false confidence.** CAWNET communicates acknowledgment and stoke,
-  never a claim of safety, location, or rescue readiness.
+  never a claim of safety, rescue readiness, or reliable location.
 - **Local-first and private by default.** Start with no cloud dependency, no
-  stored coordinates, and no account required for the core interaction.
+  stored coordinates by default, and no account required for the core
+  interaction. WAN sharing is a deliberate, temporary opt-in.
+- **People control their visibility.** Presence and location sharing require a
+  chosen audience, precision, and expiry, and can be revoked at any time.
 - **Crew-scale.** Optimize for people moving together nearby, while leaving the
   useful range and network shape open to evidence.
 - **Modular form factors.** Reuse the interaction across skiing, mountain
@@ -69,8 +86,8 @@ decisions.
    that hugs the shaft in a protective rubber-like carrier and can host motion
    or environmental sensing.
 3. **Backpack node** — room for a larger battery, stronger audio, richer
-   feedback, gateway/relay behavior, and more compute. An SBC is possible but
-   intentionally undecided.
+   feedback, local relay behavior, optional WAN gateway/backhaul, and more
+   compute. An SBC is possible but intentionally undecided.
 4. **Activity mounts** — alternate housings for a mountain-bike handlebar,
    backpack strap, jacket, vehicle, or trailhead installation.
 
@@ -112,4 +129,3 @@ until the basic parameters and an initial prototype brief are agreed.
 Licensing is **TBD**. This repository intentionally has no license while we
 decide how software, firmware, hardware designs, documentation, branding, and
 creative assets should be licensed.
-

@@ -13,6 +13,9 @@ we should observe, measure, or decide before a prototype stack hardens.
 - What latency still feels immediate?
 - How do people join, leave, and identify a temporary crew without a screen?
 - Is one signal enough, or would additional messages dilute the simplicity?
+- How does a recipient recognize the sender when personal audio is muted?
+- What are the fastest controls for quiet, haptic-only, and do-not-disturb
+  modes?
 
 ## Physical design
 
@@ -40,6 +43,28 @@ we should observe, measure, or decide before a prototype stack hardens.
 - Is cross-crew isolation desirable when several groups are nearby?
 - How should degraded range or an unreachable peer be communicated without
   suggesting danger?
+- Does optional WAN backhaul belong on a phone, a backpack node, either, or
+  neither?
+- What happens to extended-crew state when backhaul disappears and returns?
+
+## Extended crews and location
+
+- Is “I am out today” useful without location, and what rendezvous experience
+  follows from presence-only sharing?
+- Which precision choices are understandable in the field: presence, coarse
+  zone, resort/region, or exact location?
+- Can a user always see who has access, what precision they receive, and when
+  the share expires?
+- What default and maximum TTLs keep sharing genuinely temporary?
+- How are shares revoked immediately, including from cached or offline clients?
+- How are crew ACLs created, delegated, audited, and dissolved without turning
+  the one-button product into account-management homework?
+- Should activity say only “crew visited this area,” or may it name a line?
+  How do we protect sensitive stashes, land access, and community norms?
+- Can useful area activity exist without recording a route, timestamp trail,
+  or durable location history?
+- How should stale or delayed WAN presence be labeled so nobody treats it as a
+  dependable locator?
 
 ## Radio and regulation
 
@@ -68,6 +93,19 @@ we should observe, measure, or decide before a prototype stack hardens.
 - How loud must a ca-caw be near wind and helmets, and where can a speaker live?
 - Would bone conduction, haptics, or a piezo be more effective?
 - Should volume be automatic, configurable, or socially constrained?
+- Are personal sounds selected from a curated pack, supplied by users, or both?
+- What duration, codec, storage budget, and synchronization method fit a
+  low-power receiving node?
+- Can the mesh send only a compact authenticated identity/event while the
+  receiver plays a cached sound? What is the behavior for a missing sound?
+- Could WAN provisioning distribute sound packs without making WAN or an
+  account mandatory?
+- What licensing and attribution rules apply to bird calls, music, and
+  user-provided clips?
+- How do we address offensive sounds, impersonation, moderation, and sharing
+  custom audio across crew boundaries?
+- How do quiet areas, wildlife concerns, and personal accessibility needs shape
+  quiet, haptic-only, and visual modes?
 - Which sensors create an actually delightful feature rather than data exhaust?
 - Does motion sensing belong on the pole, in the backpack, or nowhere?
 - What data is ephemeral, and what—if anything—is stored locally?
@@ -82,6 +120,16 @@ we should observe, measure, or decide before a prototype stack hardens.
 - What diagnostics exist without storing coordinates or a durable movement
   history?
 - How are lost or borrowed devices removed from a crew?
+- Which WAN data needs end-to-end encryption, and where do keys live on phones,
+  backpack gateways, and minimal nodes?
+- What metadata remains visible—timing, packet volume, crew relationships,
+  gateway addresses, or coarse location—even when content is encrypted?
+- Can location precision, audience ACL, consent, and TTL travel with the data
+  and remain enforceable through relays, caches, and notifications?
+- How are access removal and revocation handled for a temporarily offline
+  recipient?
+- What prevents screenshots, exports, or integrations from creating a public or
+  default history of private presence and stash activity?
 
 ## Firmware and maintenance
 
@@ -114,4 +162,7 @@ Before selecting a platform, useful early work could include:
    human meaning.
 5. Candidate-radio range and power test plans based on measured terrain needs.
 6. A safety-language review to keep the product firmly in the stoke lane.
-
+7. A paper privacy-control test covering audience, precision, expiry,
+   revocation, and stale-state communication.
+8. A personal-sound test comparing cached playback with streamed audio,
+   including quiet and haptic-only use.
